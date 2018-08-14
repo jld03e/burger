@@ -1,0 +1,19 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "burger eating app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jld03e/burger.git"
+  },
+  "author": "Me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jld03e/burger/issues"
+  },
+  "homepage": "https://github.com/jld03e/burger#readme"
+}
