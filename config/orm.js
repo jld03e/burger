@@ -1,4 +1,16 @@
-var connnection = require("../config/connection.js");
+// 3. Create an `orm.js` file inside `config` directory.
+
+//    * Import (require) `connection.js` into `orm.js`
+
+//    * In the `orm.js` file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
+
+//      * `selectAll()`
+//      * `insertOne()`
+//      * `updateOne()`
+
+//    * Export the ORM object in `module.exports`.
+
+var connection = require("../config/connection.js");
 
 // In order to write the query, we need 3 question marks.
 // The above helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
@@ -36,3 +48,16 @@ function printQuestionMarks(num) {
     return arr.toString();
   }
   
+  var orm = {
+      selectAll: function(tableInput, cb) {
+          var queryString = "SELECT * FROM " + tableInput + ";";
+          connection.query(queryString, function(err, result) {
+              if (err) {
+                  throw err;
+              }
+              cb(result);
+          });
+      }
+  }
+
+  module.exports = orm;
